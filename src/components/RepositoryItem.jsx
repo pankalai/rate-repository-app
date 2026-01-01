@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     paddingLeft: 15,
     rowGap: 10,
+    flexShrink: 1
   },
   bottomContainer: {
     display: 'flex',

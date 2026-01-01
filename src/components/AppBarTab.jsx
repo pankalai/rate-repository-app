@@ -7,10 +7,10 @@ const styles = StyleSheet.create({
   }
 });
 
-const AppBarTab = ({children}) => {
+const AppBarTab = ({ children }) => {
     return (
         <Pressable>
-            <Text color="primary" fontWeight="bold" fontSize="subheading" style={styles.item}>{children}</Text>
+            <Text color="textTertiary" fontWeight="bold" fontSize="subheading" style={styles.item}>{children}</Text>
         </Pressable>
     )
 }

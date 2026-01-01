@@ -7,10 +7,11 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
-    paddingLeft: 10,
-    paddingTop: Constants.statusBarHeight,
+    alignItems: 'stretch',
+    paddingTop: Constants.statusBarHeight+20,
+    paddingBottom: 10,
     justifyContent: 'left',
-    backgroundColor: withAlpha(theme.colors.appBarBackground, 0.4),
+    backgroundColor: withAlpha(theme.colors.appBarBackground, 0.8),
     fontSize: theme.fontWeights.bold
   }
 });
@@ -19,7 +20,6 @@ const AppBar = () => {
   return (
   <View style={styles.container}>
     <AppBarTab>Repositories</AppBarTab>
-    <AppBarTab>Users</AppBarTab>
   </View>
   )
 };

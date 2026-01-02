@@ -7,7 +7,7 @@ import theme from '../theme';
 const styles = StyleSheet.create({
   listItemContainer: {
     display: 'flex',
-    backgroundColor: '#ffffff',
+    backgroundColor: theme.colors.itemBackground,
     padding: 5
   },
   topContainer: {

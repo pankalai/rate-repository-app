@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingTop: Constants.statusBarHeight,
     paddingBottom: 15,
-    backgroundColor: withAlpha(theme.colors.appBarBackground, 0.8),
+    backgroundColor: withAlpha(theme.colors.appBarBackground, 0.9),
   },
   scrollView: {
 

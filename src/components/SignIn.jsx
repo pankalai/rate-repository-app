@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     height: 40,
     borderRadius: 5,
+    borderColor: 'gray'
   },
   submitButton: {
     backgroundColor: theme.colors.primary,

@@ -8,7 +8,6 @@ import { GET_REPOSITORIES } from '../graphql/queries';
 //   const [repositories, setRepositories] = useState();
 //   const [loading, setLoading] = useState(false);
   
-
 //   const fetchRepositories = async () => {
 //     setLoading(true);
 

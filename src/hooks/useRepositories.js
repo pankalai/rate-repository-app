@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client/react';
 import { GET_REPOSITORIES } from '../graphql/queries';
 
 // Fetch API
-//import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 // const useRepositories = () => {
   
 //   const [repositories, setRepositories] = useState();
@@ -31,5 +31,6 @@ const useRepositories = () => {
 
   return { repositories: data?.repositories ?? null, error, loading, refetch }
 }
+
 
 export default useRepositories;

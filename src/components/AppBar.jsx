@@ -3,6 +3,10 @@ import Constants from 'expo-constants';
 import AppBarTab from './AppBarTab';
 import theme, { withAlpha} from '../theme';
 
+import { useApolloClient } from '@apollo/client/react';
+import useAuthStorage from '../hooks/useAuthStorage';
+import useMe from '../hooks/useMe';
+
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
@@ -17,11 +21,28 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+
+  const apolloClient = useApolloClient();
+  const authStorage = useAuthStorage();
+  const { me, loading } = useMe()
+
+  const loggedIn = !!me;
+
+  const signOut = async () => {
+    await authStorage.removeAccessToken()
+    await apolloClient.resetStore();
+  }
+
   return (
   <View style={styles.container}>
     <ScrollView horizontal style={styles.scrollView}>
       <AppBarTab to="/">Repositories</AppBarTab>
-      <AppBarTab to="/signin">Sign in</AppBarTab>
+      { loading ? null : (
+          loggedIn 
+          ? <AppBarTab pressFunction={signOut}>Sign out</AppBarTab>
+          : <AppBarTab to="/signin">Sign in</AppBarTab>
+        )
+      }
     </ScrollView>
   </View>
   )

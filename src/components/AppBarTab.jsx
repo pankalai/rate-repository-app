@@ -8,14 +8,18 @@ const styles = StyleSheet.create({
   }
 });
 
-const AppBarTab = ({ to, children }) => {
+const AppBarTab = ({ to, pressFunction, children }) => {
+  const content = (
+    <Text color="textTertiary" fontWeight="bold" fontSize="subheading" style={styles.item}>
+      {children}
+    </Text>
+  )
     return (
-      <Pressable>
-        <Link to={to}>
-          <Text color="textTertiary" fontWeight="bold" fontSize="subheading" style={styles.item}>{children}</Text>
-        </Link>
+      <Pressable onPress={pressFunction}>
+        {to ? <Link to={to}>{content}</Link> : content}
       </Pressable>
     )
 }
+
 
 export default AppBarTab

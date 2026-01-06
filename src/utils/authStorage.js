@@ -6,11 +6,7 @@ class AuthStorage {
   }
 
   async getAccessToken() {
-    const token = await AsyncStorage.getItem(`${this.namespace}:token`)
-    if (!token) {
-      return null
-    }
-    return token.replace("Bearer ","")
+    return await AsyncStorage.getItem(`${this.namespace}:token`)
   }
 
   async setAccessToken(accessToken) {
